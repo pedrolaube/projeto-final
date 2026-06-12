@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Viagem dos Sonhos</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="particles"></div>
+
+    <header class="hero">
+      <h1>Zermatt (Suíça)</h1>
+
+      <p class="subtitulo">
+        Uma vila alpina cercada pelas montanhas mais lindas do mundo.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <img src="image/Zermatt1.png" alt="Zermatt" />
+
+        <div class="texto">
+          <h2>Sobre Zermatt</h2>
+
+          <p>
+            Zermatt é uma vila alpina famosa no sul da Suíça, praticamente aos
+            pés da montanha mais icônica do país: o Matterhorn. A cidade parece
+            cenário de filme, chalés de madeira, neve quase o ano inteiro nas
+            montanhas, ruas limpas e um clima extremamente tranquilo. Um detalhe
+            famoso: carros a combustão praticamente não circulam por lá. O
+            transporte dentro da vila é feito com carrinhos elétricos,
+            bicicletas e caminhadas, o que deixa o lugar silencioso e muito
+            diferente de cidades comuns
+          </p>
+
+          <p>
+            Um detalhe famoso: carros a combustão praticamente não circulam por
+            lá. O transporte dentro da vila é feito com carrinhos elétricos,
+            bicicletas e caminhadas, o que deixa o lugar silencioso e muito
+            diferente de cidades comuns.
+          </p>
+        </div>
+      </section>
+
+      <section class="video-card">
+        <h2>Zermatt 4K</h2>
+
+        <video controls>
+          <source src="video/Zermatt.mp4" type="video/mp4" />
+        </video>
+      </section>
+      <script>
+        const imagens = document.querySelectorAll(".img");
+        const modal = document.getElementById("modal");
+        const imgExpandida = document.getElementById("imgExpandida");
+
+        imagens.forEach((img) => {
+          img.addEventListener("click", () => {
+            modal.style.display = "flex";
+            imgExpandida.src = img.src;
+          });
+        });
+
+        modal.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,696 @@
+body {
+  background: var(--black);
+  color: var(--silver);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  align-items: center;
+}
+:root {
+  --black: #0a0a0a;
+  --dark: #111111;
+  --graphite: #8a8d93;
+  --silver: #bfc3c9;
+  --purple: #8a2be2;
+
+  --shadow: 0 0 15px rgba(138, 43, 226, 0.25);
+}
+
+/* =======================
+   RESET
+======================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: var(--silver);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* =======================
+   LAYOUT
+======================= */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+section {
+  margin-top: 40px;
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.header {
+  text-align: center;
+  background: var(--dark);
+  padding: 25px;
+  border: 1px solid var(--silver);
+  border-bottom: 4px solid var(--purple);
+  border-radius: 10px;
+}
+
+.header h1 {
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: var(--graphite);
+}
+
+/* =======================
+   HERO
+======================= */
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--graphite);
+}
+
+.hero-icon {
+  display: block;
+  margin-top: 20px;
+  font-size: 3rem;
+  color: var(--purple);
+}
+
+/* =======================
+   ESTATÍSTICAS
+======================= */
+
+.stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 220px;
+  background: var(--dark);
+  border: 1px solid var(--silver);
+  border-radius: 10px;
+  text-align: center;
+  padding: 25px;
+}
+
+.stat-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.stat-card span {
+  font-size: 2rem;
+  color: var(--purple);
+  font-weight: bold;
+}
+
+/* =======================
+   MISSÕES
+======================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  background: var(--dark);
+  border: 1px solid var(--silver);
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+/* Cantos decorativos */
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid var(--purple);
+  border-left: 3px solid var(--purple);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 3px solid var(--purple);
+  border-right: 3px solid var(--purple);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  margin-bottom: 10px;
+  color: var(--graphite);
+}
+
+/* =======================
+   QUADRO DA GUILDA
+======================= */
+
+.notice-board {
+  background: var(--dark);
+  border: 1px solid var(--silver);
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.notice-board h2 {
+  margin-bottom: 20px;
+}
+
+.notice-board ul {
+  padding-left: 20px;
+}
+
+.notice-board li {
+  margin-bottom: 10px;
+  color: var(--graphite);
+}
+
+/* =======================
+   FOOTER
+======================= */
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid var(--silver);
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer span {
+  color: var(--purple);
+}
+
+/* =======================
+   RESPONSIVIDADE
+======================= */
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+}
+.cards {
+  position: relative;
+}
+
+.cards::before {
+  content: "⚔";
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  font-size: 5rem;
+  color: var(--purple);
+  opacity: 0.4;
+}
+
+.cards::after {
+  content: "⚔";
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  font-size: 5rem;
+  color: var(--purple);
+  opacity: 0.4;
+  transform: scaleX(-1);
+}
+.ornament {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.12;
+  pointer-events: none;
+}
+.left-top {
+  left: 80px;
+  top: 10%;
+}
+
+.right-top {
+  right: 80px;
+  top: 10%;
+}
+
+.left-middle {
+  left: -40px;
+  top: 40%;
+}
+
+.right-middle {
+  right: -40px;
+  top: 40%;
+}
+
+.left-bottom {
+  left: 120px;
+  bottom: 80px;
+}
+
+.right-bottom {
+  right: 120px;
+  bottom: 80px;
+}
+.ornament {
+  width: 120px;
+}
+
+.left-middle,
+.right-middle {
+  width: 220px;
+}
+.mirror {
+  transform: scaleX(-1);
+}
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.levitate {
+  animation: levitate 3s ease-in-out infinite;
+}
+
+.glow {
+  animation:
+    float 6s ease-in-out infinite,
+    glow 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -20px;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+}
+
+@keyframes levitate {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px #8a2be2);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 25px #8a2be2);
+  }
+}
+.espada {
+  position: relative;
+  animation: balancar 2s ease-in-out infinite;
+}
+
+/* Lâmina */
+.lamina {
+  width: 20px;
+  height: 250px;
+  background: linear-gradient(to right, #c0c0c0, #ffffff, #c0c0c0);
+  border-radius: 10px 10px 0 0;
+  align-items: center;
+}
+
+/* Guarda */
+.guarda {
+  position: absolute;
+  top: 240px;
+  left: -40px;
+  width: 100px;
+  height: 15px;
+  background: gold;
+  border-radius: 10px;
+  align-items: center;
+}
+
+/* Cabo */
+.cabo {
+  position: absolute;
+  top: 255px;
+  left: 2px;
+  width: 16px;
+  height: 80px;
+  background: #5b3a29;
+  border-radius: 0 0 10px 10px;
+  align-items: center;
+}
+
+/* Animação */
+@keyframes balancar {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes ataque {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(600px);
+  }
+}
+.espada {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  animation:
+    balancar 2s ease-in-out infinite,
+    glow 3s ease-in-out infinite;
+  z-index: 0;
+}
+.card {
+  position: relative;
+  z-index: 2;
+}
+.medieval-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.7)),
+    url("https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1920&q=80");
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* =====================
+   NÉVOA
+===================== */
+
+.fog {
+  position: absolute;
+  width: 150%;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(50px);
+}
+
+.fog1 {
+  top: 20%;
+  animation: fogMove 30s linear infinite;
+}
+
+.fog2 {
+  top: 55%;
+  animation: fogMoveReverse 40s linear infinite;
+}
+
+@keyframes fogMove {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(20%);
+  }
+}
+
+@keyframes fogMoveReverse {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(-20%);
+  }
+}
+
+/* =====================
+   LANTERNAS
+===================== */
+
+.lamp {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffcc66;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 15px #ffcc66,
+    0 0 40px #ffcc66,
+    0 0 80px #ff9900;
+
+  animation: flicker 2s infinite alternate;
+}
+
+.lamp-left {
+  left: 15%;
+  top: 20%;
+}
+
+.lamp-right {
+  right: 20%;
+  top: 30%;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* =====================
+   FOLHAS AO VENTO
+===================== */
+
+.leaf {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #5b8c3b;
+  border-radius: 50% 0;
+
+  opacity: 0.8;
+}
+
+.l1 {
+  left: -10%;
+  top: 20%;
+  animation: fall 10s linear infinite;
+}
+
+.l2 {
+  left: -5%;
+  top: 50%;
+  animation: fall 13s linear infinite;
+}
+
+.l3 {
+  left: -15%;
+  top: 10%;
+  animation: fall 16s linear infinite;
+}
+
+.l4 {
+  left: -20%;
+  top: 70%;
+  animation: fall 18s linear infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(120vw) translateY(120px) rotate(720deg);
+  }
+}
+
+/* =====================
+   PARTÍCULAS DE POEIRA
+===================== */
+
+.particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: float 12s linear infinite;
+}
+
+.particles span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.particles span:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+}
+.particles span:nth-child(3) {
+  left: 40%;
+  animation-delay: 4s;
+}
+.particles span:nth-child(4) {
+  left: 60%;
+  animation-delay: 1s;
+}
+.particles span:nth-child(5) {
+  left: 75%;
+  animation-delay: 5s;
+}
+.particles span:nth-child(6) {
+  left: 85%;
+  animation-delay: 3s;
+}
+.particles span:nth-child(7) {
+  left: 95%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* =====================
+   CONTEÚDO
+===================== */
+
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px black;
+}
+
+.content p {
+  font-size: 1.2rem;
+}
+img.guild-foto {
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--silver);
+  box-shadow: var(--shadow);
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+}
